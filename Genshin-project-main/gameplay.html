@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tạp chí Teyvat</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Header */
+header {
+    background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Main Layout */
+main {
+    display: flex;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+iframe {
+    width: 80%; /* Adjust width */
+    max-width: 800px;
+    display: block;
+    margin: 0 auto; /* Center the video */
+    border-radius: 10px; /* Add rounded corners */
+}
+
+.news {
+    flex: 3;
+}
+
+.news article {
+    margin-bottom: 50px;
+}
+
+.news img {
+    width: 100%;
+    height: auto;
+}
+
+.sidebar {
+    flex: 1;
+    margin-left: 20px;
+}
+.sidebar article {
+    margin-bottom: 40px;
+}
+
+.sidebar img {
+    width: 100%;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+}
+</style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="logo">
+            <h1>Genshin Impact</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="file:///D:/Sublime%20Text/MyWebsite.html#">Trang chủ</a></li>
+                <li><a href="file:///D:/Sublime%20Text/gameplay.html">Gameplay</a></li>
+                <li><a href="file:///D:/Sublime%20Text/nhan%20vat.html">Nhân vật</a></li>
+                <li><a href="file:///D:/Sublime%20Text/giup%20do.html">Giúp đỡ</a></li>
+                <li><a href="file:///D:/Sublime%20Text/fan%20art.html">Fan Art</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <section class="news">
+           <h2 style="color: #1f628e;">GAMEPLAY</h2><br>
+            <article>
+                <iframe width="560" height="415" 
+                    src="https://www.youtube.com/embed/P6p0xxKuwf4" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe><br>
+                <h3 style="color: darkcyan; text-align: center;">| Full Game Walkthrough | No Commentary</h3><br><br>
+            </article>
+
+           <article>
+                <iframe width="560" height="415" 
+                    src="https://www.youtube.com/embed/AfzjxTHCv14" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe><br>
+            <h3 style="color: darkcyan; text-align: center;">
+        C0 Neuvillette Freeze and C0 Alhaitham Spread | Genshin Impact Abyss 5.3 Floor 12 9 Stars
+            </h3>
+            </article>
+
+            <article>
+                <iframe width="560" height="415" 
+                    src="https://www.youtube.com/embed/2QK__L4j_CA" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe><br>
+            <h3 style="color: darkcyan; text-align: center;">
+        C6 Effects Side-by-Side Comparison - All Characters 2025
+            </h3>
+            </article>
+        </section>
+
+        
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2025 Hướng tới những vì sao</p>
+    </footer>
+
+</body>
+</html>

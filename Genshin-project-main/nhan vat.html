@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tạp chí Teyvat</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Header */
+header {
+    background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Main Layout */
+main {
+    display: flex;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+.character {
+    border: 2px solid transparent;
+    transition: border 0.3s ease-in-out;
+    border-radius: 10px; /* Rounded corners */
+    padding: 15px; /* Space inside the border */
+    margin: 10px; /* Space between each character */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    text-align: center; /* Centers the text under the image */
+    background-color: #e0e0e0; /* Light gray background */
+}
+
+.character:hover {
+    border: 2px solid gold;
+}
+.characters-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 characters per row */
+    gap: 40px; /* Adjust spacing between characters */
+    justify-items: center; /* Centers content in each grid cell */
+    padding: 20px; /* Adds space around the grid */
+    max-width: 1000px; /* Adjust based on your page */
+    margin: 0 auto;
+}
+
+ .news {
+    display: flex; 
+    flex-wrap: wrap;  /* Allow items to move to the next row if space runs out */
+    gap: 20px; /* Space between items */
+  }
+
+  .news article {
+    width: 200px; /* Adjust width */
+    text-align: center;
+  }
+
+  .news img {
+    width: 100%; /* Make the image fit inside the article */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Rounded corners */
+  }
+
+
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+}
+</style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="logo">
+            <h1>Genshin Impact</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="file:///D:/Sublime%20Text/MyWebsite.html#">Trang chủ</a></li>
+                <li><a href="file:///D:/Sublime%20Text/gameplay.html">Gameplay</a></li>
+                <li><a href="file:///D:/Sublime%20Text/nhan%20vat.html">Nhân vật</a></li>
+                <li><a href="file:///D:/Sublime%20Text/giup%20do.html">Giúp đỡ</a></li>
+                <li><a href="file:///D:/Sublime%20Text/fan%20art.html">Fan Art</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <section class="news">
+           <h2 style="color: #1f628e; width: 100%;">NHÂN VẬT</h2>
+
+           <article class="character">
+            <img src="https://media.pocketgamer.com/artwork/ra-86861-1622487641/travelers-aether-and-lumine_png_1640.jpg" alt="Nhà Lữ Hành">
+            <h3>Nhà Lữ Hành</h3>
+            <p>Nhà Lữ Hành lưu lạc đến đây từ thế giới khác, bị Thần cướp mất người thân, từ đó bước vào con đường đi tìm 7 vị Thần.</p>
+        </article>
+            
+
+            <article class="character">
+                <img src="https://cdn.genshin.cc/media/characters/256/Zhongli.png" alt="Zhongli">
+                <h3>Zhongli</a></h3>
+                <p>Một chuyên gia bí ẩn làm việc tại Nhà tang lễ Wangsheng, am hiểu về mọi thứ.</p>
+            </article>
+
+            <article class="character">
+                <img src="https://cdn.genshin.cc/media/characters/256/Xiao.png" alt="Xiao">
+                <h3>Xiao</a></h3>
+                <p>Yaksha cuối cùng của Liyue, bảo vệ dân chúng khỏi bóng tối.</p>
+            </article>
+
+            <article class="character">
+                <img src="https://static.wikia.nocookie.net/gensin-impact/images/e/e9/Hu_Tao_Icon.png/revision/latest?cb=20210228210611" alt="Hu Tao">
+                <h3>Hu Tao</h3>
+                <p>Đường chủ Nhà tang lễ Wangsheng, đầy năng lượng và bí ẩn.</p>
+            </article>
+
+             <article class="character">
+            <img src="https://static.wikia.nocookie.net/gensin-impact/images/2/24/Raiden_Shogun_Icon.png/revision/latest?cb=20240717072843" alt="Raiden Shogun">
+            <h3>Raiden Shogun</h3>
+            <p>Shogun của Inazuma, khao khát vĩnh hằng.</p>
+        </article>
+
+        <article class="character">
+            <img src="https://cdn.genshin.cc/media/characters/256/Kazuha.png" alt="Kaedehara Kazuha">
+            <h3>Kazuha</h3>
+            <p>Samurai lang thang, yêu thích thơ ca và tự do.</p>
+        </article>
+
+        <article class="character">
+            <img src="https://cdn.genshin.cc/media/characters/256/Nahida.png" alt="Nahida">
+            <h3>Nahida</h3>
+            <p>Thảo thần của Sumeru, mang trong mình trí tuệ vô biên.</p>
+        </article>
+
+        <article class="character">
+            <img src="https://cdn.genshin.cc/media/characters/256/Albedo.png" alt="Albedo">
+            <h3>Albedo</h3>
+            <p>Giả kim thuật gia thiên tài của Mondstadt.</p>
+        </article>
+
+        <article class="character">
+            <img src="https://cdn.genshin.cc/media/characters/256/Ganyu.png" alt="Ganyu">
+            <h3>Ganyu</h3>
+            <p>Thư ký của Liyue Qixing, chăm chỉ và tận tụy.</p>
+        </article>
+
+        <article class="character">
+            <img src="https://static.wikia.nocookie.net/gensin-impact/images/8/85/Tartaglia_Icon.png/revision/latest?cb=20210213163935" alt="Tartaglia (Childe)">
+            <h3>Childe</h3>
+            <p>Harbinger của Fatui, là một chiến binh tài giỏi.</p>
+        </article>
+
+        <article class="character">
+            <img src="https://cdn.genshin.cc/media/characters/256/Yoimiya.png" alt="Yoimiya">
+            <h3>Yoimiya</h3>
+            <p>Bậc thầy pháo hoa của Inazuma.</p>
+        </article>
+
+         <article class="character">
+            <img src="https://static.wikia.nocookie.net/gensin-impact/images/f/f6/Yumemizuki_Mizuki_Icon.png/revision/latest?cb=20250212014631" alt="Yumemizuki Mizuki">
+            <h3>Yumemizuki Mizuki</h3>
+            <p>Nhà trị liệu tâm lý kiêm đại cổ đông của Phòng Tắm Hơi Aisa.</p>
+        </article>
+
+        <article class="character">
+            <img src="https://static.wikia.nocookie.net/gensin-impact/images/d/dd/Citlali_Icon.png/revision/latest/scale-to-width/360?cb=20241130080542" alt="Citlali">
+            <h3>Citlali</h3>
+            <p>Pháp sư vĩ đại của Chủ nhân gió đêm, Granny Itztli luôn được mọi người tôn kính.</p>
+        </article>
+
+        <article class="character">
+            <img src="https://static.wikia.nocookie.net/gensin-impact/images/d/da/Mavuika_Icon.png/revision/latest/scale-to-width-down/250?cb=20250101070636" alt="Mavuika">
+            <h3>Mavuika</h3>
+            <p>Thần linh và lãnh đạo của Natlan, ngọn lửa vĩnh hằng mang lại hy vọng cho mọi sinh vật.</p>
+        </article>
+
+        <article class="character">
+            <img src="https://static.wikia.nocookie.net/gensin-impact/images/0/03/Chasca_Icon.png/revision/latest/scale-to-width/360?cb=20241120025626" alt="Chasca">
+            <h3>Chasca</h3>
+            <p>Sở hữu Tên Cổ "Vuka", Chasca là người hòa giải nổi tiếng của Hội Hoa Vũ.</p>
+        </article>
+
+        <article class="character">
+            <img src="https://static.wikia.nocookie.net/gensin-impact/images/f/f1/Venti_Icon.png/revision/latest?cb=20210214011949" alt="Venti">
+            <h3>Venti</h3>
+            <p>Một người hát rong ở Mondstadt, anh cũng chính là nhân dạng hiện tại của Phong Thần Barbatos.</p>
+        </article>
+
+         <article class="character">
+            <img src="https://static.wikia.nocookie.net/gensin-impact/images/2/21/Neuvillette_Icon.png/revision/latest/scale-to-width-down/250?cb=20240711205454" alt="Neuvillette">
+            <h3>Neuvillette</h3>
+            <p>Vị thẩm phán tối cao của Fontaine, trông có vẻ khó gần, có lẽ là bẩm sinh đã thế, hoặc vì để che giấu bí mật.</p>
+        </article>
+
+         <article class="character">
+            <img src="https://static.wikia.nocookie.net/gensin-impact/images/e/e6/Furina_Icon.png/revision/latest?cb=20231108030656" alt="Furina">
+            <h3>Furina</h3>
+            <p>Nữ hoàng của muôn nước, muôn nơi, muôn dân và muôn luật lệ, rất được dân chúng yêu thích.</p>
+        </article>
+
+        <article class="character">
+            <img src="https://i.redd.it/xfsg22mhl3zb1.jpg" alt="Arlecchino">
+            <h3>Arlecchino</h3>
+            <p>Nhà điều hành của Fatui, lãnh đạo trại trẻ mồ côi Căn nhà hơi ấm.</p>
+        </article>
+
+        <article class="character">
+            <img src="https://static.wikia.nocookie.net/gensin-impact/images/f/f8/Wanderer_Icon.png/revision/latest/scale-to-width-down/250?cb=20221207034209" alt="Wanderer">
+            <h3>Wanderer</h3>
+            <p>Nếu có trái tim là con người, thì anh ta không thể được gọi là con người.
+Nếu không có trái tim nhưng có vui buồn đau khổ, thì anh ta lại là một con rối giống với con người nhất.</p>
+        </article>
+
+
+
+        </section>        
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2025 Hướng tới những vì sao</p>
+    </footer>
+
+    </body>
+</html>

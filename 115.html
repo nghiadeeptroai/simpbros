@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SimpBros Navigation</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #ff6161;
+        }
+        .navbar {
+            position: fixed;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(255, 97, 97, 0.8); /* Giảm opacity của thanh điều hướng */
+            padding: 0 30px;
+            height: 60px; /* Đảm bảo chiều cao cố định cho thanh điều hướng */
+            width: 100%;
+            max-width: 95vw;
+            left: 0;
+            right: 0;
+            top: 0;
+            z-index: 1001;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            height: 100%; /* Giữ cho logo không ảnh hưởng đến navbar */
+        }
+        .logo img {
+            height: 50px; /* Tăng kích thước logo */
+            width: auto;
+            position: relative;
+            top: -2px; /* Đẩy logo xuống để không làm tăng chiều cao navbar */
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 10px;
+            padding: 0;
+            margin: 0;
+        }
+        .nav-links li {
+            display: inline;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            padding: 10px 15px; /* Điều chỉnh khoảng cách trong mỗi mục menu */
+        }
+        .search-box {
+            display: flex;
+            align-items: center;
+            background: white;
+            border-radius: 20px;
+            padding: 5px 10px;
+        }
+        .search-box input {
+            border: none;
+            outline: none;
+            padding: 5px;
+            color: #ff6161;
+        }
+        .search-box input::placeholder {
+            color: #ff6161;
+            font-weight: bold;
+        }
+        .search-box button {
+            background: none;
+            border: none;
+            font-weight: bold;
+            color: #ff6161;
+            cursor: pointer;
+        }
+        .search-box button {
+            background: none;
+            border: none;
+            font-weight: bold;
+            color: #ff6666;
+            cursor: pointer;
+        }
+        .section {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        #section1 {
+            background: url('file:///D:/%E1%BA%A3nh%20115/bg.png') no-repeat center center;
+            background-size: cover;
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+        #section2 {
+            background: url('file:///D:/%E1%BA%A3nh%20115/Waifu%20collection(section2).png') no-repeat center center;
+            background-size: cover;
+            background-attachment: scroll;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        #section3 {
+            background: url('file:///D:/%E1%BA%A3nh%20115/Waifu%20collection%20(section3).png') no-repeat center center;
+            background-size: cover;
+            background-attachment: scroll;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+
+        }
+        #section4 {
+            background: url('file:///D:/%E1%BA%A3nh%20115/Waifu%20collection%20(section4).png') no-repeat center center;
+            background-size: cover;
+            background-attachment: scroll;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+
+        }
+        #section5 {
+            background: url('file:///D:/%E1%BA%A3nh%20115/Waifu%20collection%20(section5).png') no-repeat center center;
+            background-size: cover;
+            background-attachment: scroll;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+
+        }
+
+        .character-name {
+            font-size: 48px; /* Điều chỉnh kích thước chữ */
+            font-weight: bold;
+            text-transform: uppercase;
+            color: white;
+            margin-bottom: 20px;
+            margin-top: 10%;
+        }
+        .character-name1 {
+            font-size: 48px; /* Điều chỉnh kích thước chữ */
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #545454;
+            margin-bottom: 20px;
+            margin-top: 10%;
+        }
+        .character-name2 {
+            font-size: 48px; /* Điều chỉnh kích thước chữ */
+            font-weight: bold;
+            text-transform: uppercase;
+            color: white;
+            margin-bottom: 20px;
+            margin-top: 10%;
+        }
+
+
+        .title {
+            font-size: 70px;
+            font-weight: bold;
+            color: white;
+            background-color: transparent;
+            padding: 10px 20px 10px 20px;
+            display: inline-block;
+            margin-top: 20px;
+            text-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            position: absolute;
+            top: 50%;
+            left: 35%;
+            transform: translate(-50%, -50%);
+            z-index: 50;
+            width: 100%;
+        }
+        .content-section {
+            font-size: 20px;
+            width: 40%;
+            background-color: transparent;
+            padding: 40px;
+            color: white;
+            border-radius: 10px;
+            margin-top: 20px;
+            text-align: justify;
+            margin-left: 0;
+            margin-top: 5%;
+            left: -350px;
+            position: relative;
+        }
+        .content-section1 {
+            font-size: 20px;
+            width: 40%;
+            background-color: transparent;
+            padding: 40px;
+            color: #545454;
+            border-radius: 10px;
+            margin-top: 20px;
+            text-align: justify;
+            margin-left: 0;
+            margin-top: 5%;
+            left: 330px;
+            position: relative;
+        }
+        .content-section2 {
+            font-size: 20px;
+            width: 40%;
+            background-color: transparent;
+            padding: 40px;
+            color: white;
+            border-radius: 10px;
+            margin-top: 20px;
+            text-align: justify;
+            margin-left: 0;
+            margin-top: 5%;
+            left: 330px;
+            position: relative;
+        }
+        .content-section4 {
+            font-size: 20px;
+            width: 40%;
+            background-color: transparent;
+            padding: 40px;
+            color: white;
+            border-radius: 10px;
+            margin-top: 20px;
+            text-align: justify;
+            margin-left: 0;
+            margin-top: 10%;
+            left: -350px;
+            position: relative;
+        }
+        .firstimage img{
+            position: absolute;
+            bottom: 0px;
+            right: 0px;
+            width: 580px;
+            height: auto;
+            display: flex;
+            overflow: hidden;
+            justify-content: center;
+            align-items: center;
+            opacity: 0.56;
+            z-index: 1;
+        }
+        .secondimage img{
+            position: absolute;
+            bottom: 0px;
+            right: 0px;
+            width: 490px;
+            height: auto;
+            display: flex;
+            overflow: hidden;
+            justify-content: center;
+            align-items: center;
+            z-index: 2;
+            transition: transform 0.3s ease-in-out;
+            transform-origin: bottom right; /* Phóng to về phía trên bên trái */
+        }
+        .secondimage img:hover {
+            transform: scale(1.2) translate(0%, 0%); /* Phóng to 1.2 lần về phía trên bên trái */
+        }
+        .read-more {
+            background-color: white;
+            color: #ff6161;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 100px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            margin-left: 200px;
+            text-decoration: none; /* Loại bỏ gạch dưới */
+        }
+
+        .read-more:hover {
+            background-color: #ff1a1a;
+            transform: scale(1.05);
+            color: white;
+            text-decoration: none; /* Loại bỏ gạch dưới */
+        }
+        .read-more2 {
+            background-color: #545454;
+            color: #ffde59;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 100px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            margin-left: 200px;
+            text-decoration: none; /* Loại bỏ gạch dưới */
+        }
+
+        .read-more2:hover {
+            background-color: #ffbd59;
+            transform: scale(1.05);
+            color: #545454;
+            text-decoration: none; /* Loại bỏ gạch dưới */
+        }
+        .read-more3 {
+            background-color: white;
+            color: #8c52ff;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 100px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            margin-left: 200px;
+            text-decoration: none; /* Loại bỏ gạch dưới */
+        }
+
+        .read-more3:hover {
+            background-color: #6e26ff;
+            transform: scale(1.05);
+            color: white;
+            text-decoration: none; /* Loại bỏ gạch dưới */
+        }
+        .read-more1 {
+    background-color: white;
+    color: #669aff;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-left: 200px;
+    text-decoration: none; /* Loại bỏ gạch dưới */
+}
+
+.read-more1:hover {
+    background-color: #004aad;
+    transform: scale(1.05);
+    color: white;
+    text-decoration: none; /* Loại bỏ gạch dưới */
+}
+
+.footer {
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.1);
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+            position: relative;
+        }
+        .footer-logos {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            top: 10px;
+        }
+        .footer-logos img {
+            height: 50px;
+            width: auto;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelector(".search-box button").addEventListener("click", function() {
+                let query = document.querySelector(".search-box input").value.toLowerCase();
+                let keywordsSection2 = ["miku nakano", "nakano miku", "miku"];
+                let keywordsSection3 = ["marin", "kitagawa marin", "marin kitagawa"];
+                let keywordsSection4 = ["shinobu", "kocho shinobu", "shinobu kocho"];
+                let keywordsSection5 = ["neuvillette", "anh long"];
+                
+                if (keywordsSection2.includes(query)) {
+                    document.querySelector("#section2").scrollIntoView({ behavior: "smooth" });
+                } else if (keywordsSection3.includes(query)) {
+                    document.querySelector("#section3").scrollIntoView({ behavior: "smooth" });
+                } else if (keywordsSection4.includes(query)) {
+                    document.querySelector("#section4").scrollIntoView({ behavior: "smooth" });
+                } else if (keywordsSection5.includes(query)) {
+                    document.querySelector("#section5").scrollIntoView({ behavior: "smooth" });
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <iframe src="https://www.nhaccuatui.com/mh/background/dCaOSI4iaTvT" width="1" height="1" frameborder="0" allowfullscreen allow="autoplay"></iframe> 
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="#section1">
+                <img src="C:\Users\ADMIN\Downloads\SimpBros (7) (1).png" alt="SimpBros Logo">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#section1">HOME</a></li>
+                <li><a href="#section2">MIKU NAKANO</a></li>
+                <li><a href="#section3">MARIN KITAGAWA</a></li>
+                <li><a href="#section4">SHINOBU KOCHO</a></li>
+                <li><a href="#section5">NEUVILLETTE</a></li>
+            </ul>
+
+            <div class="search-box">
+                <input type="text" placeholder="e.g. Nakano Miku">
+                <button>SEARCH</button>
+            </div>
+        </nav>
+    </header>
+    
+    <div class="firstimage img">
+        <img src="D:\ảnh 115\image1.png" alt="Second Bottom Right Image">
+    </div>
+    <div class="secondimage img">
+        <img src="D:\ảnh 115\image2.png" alt="Second Bottom Right Image">
+    </div>
+    <section id="section1" class="section">
+        <h1 class="title">MY WAIFU COLLECTION</h1>
+        
+    </section>
+    <section id="section2" class="section">
+        <div class="content-section">
+            <h1 class="character-name">MIKU NAKANO</h1>
+            <p>Miku Nakano is the one of the main characters in the manga and anime series 5-toubun no Hanayome. She is one of the quintuplet sisters, along with Ichika, Nino, Yotsuba, and Itsuki Nakano. Miku is the third eldest of the siblings and serves as one of the main love interests for the protagonist, Futaro Uesugi.</p>
+            <a href="https://minhnghia01.my.canva.site/mikunakano" target="_blank" class="read-more">See More</a>
+        </div>
+    </section>
+    <section id="section3" class="section">
+        <div class="content-section1">
+            <h1 class="character-name1">MARIN KITAGAWA</h1>
+            <p>Marin Kitagawa is a popular and beautiful high school girl in Gojo's class. She is very interested in cosplay and has tried to make her own, but without much success. By chance, she discovers Gojo can sew and the two bond over their mutual enthusiasm for their respective hobbies.</p>
+            <a href="https://minhnghia01.my.canva.site/marinkitagawa" target="_blank" class="read-more2">See More</a>
+        </div>
+    </section>
+    <section id="section4" class="section">
+        <div class="content-section4">
+            <h1 class="character-name">SHINOBU KOCHO</h1>
+            <p>Shinobu Kocho is a major supporting character of Demon Slayer: Kimetsu no Yaiba. She is a Demon Slayer of the Demon Slayer Corps and the Insect Hashira of the Taisho era.</p>
+            <a href="https://minhnghia01.my.canva.site/shinobu-kocho-koch-shinobu-is-a-major-supporting-character-of-demon-slayer-kimetsu-no-yaiba-she-is-a-demon-slayer-of-the-demon-slayer-corps-and-the-insect-hashira-mushi-bashira-of-the-taisho-era-2-3" target="_blank" class="read-more3">See More</a>
+        </div>
+    </section>
+    <section id="section5" class="section">
+        <div class="content-section2">
+            <h1 class="character-name2">NEUVILLETTE</h1>
+            <p>Neuvillette is a playable Pneuma-aligned Hydro character in Genshin Impact.
+Neuvillette is the Iudex of Fontaine, and the leader of the Marechaussee Phantom. While Neuvillette upholds the rules of the court with utmost reverence, he is quite aloof when dealing with human emotions and often distances himself from the public eye.
+But how’s tf  this guy here !!!</p>
+             <a href="file:///C:/Users/ADMIN/Downloads/Genshin-project-main/Genshin-project-main/MyWebsite.html" target="_blank" class="read-more1">See More</a>
+        </div>
+    </section>
+    <footer id="footer" class="footer">
+
+        <p>&copy; 2025 SimpBros. All Rights Reserved.</p>
+
+        <div class="footer-logos">
+            <img src="C:\Users\ADMIN\Downloads\SimpBros (7) (1).png" alt="Your Logo">
+            <p>X</p>
+
+            <img src="C:\Users\ADMIN\Downloads\1681039182chatgpt-logo-with-name.png" alt="ChatGPT Logo"><br></br>
+        </div>
+        <p>Designed by Huỳnh Minh Nghĩa & Trần Anh Tú</p>
+    </footer>
+    
+</body>
+</html>
